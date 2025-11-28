@@ -10,11 +10,11 @@ void lapChucNang(int chonChucNang)
     {
         switch (chonChucNang)
         {
-        case 1://goi Ten Ham
+        case 1:kiemTraSoNguyen;
             break;
-        case 2://goi Ten Ham
+        case 2:uocChungVaBoiChung;
             break;
-        case 3://goi Ten Ham
+        case 3:tinhTien;
             break;
        
         default:
@@ -27,6 +27,9 @@ void lapChucNang(int chonChucNang)
         system("cls"); // clear screen
     }
 }
+void kiemTraSoNguyen(){}
+void uocChungVaBoiChung(){}
+void tinhTien(){}
 int main()
 {
     int chonChucNang;
@@ -39,7 +42,10 @@ int main()
         printf("3.Tinh Tien\n");
         printf("Moi chon chuc nang[1-3]\n");
         scanf("%d", &chonChucNang);
-        if(chonChucNang!=0){ lapChucNang(chonChucNang); }
+        if(chonChucNang!=0)
+        {
+            lapChucNang(chonChucNang);
+        }
         
     } while (chonChucNang != 0);
 }
