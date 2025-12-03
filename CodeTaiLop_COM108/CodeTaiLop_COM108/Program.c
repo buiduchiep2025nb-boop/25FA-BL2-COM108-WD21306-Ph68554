@@ -1,6 +1,7 @@
-
+﻿
 
 #include <stdio.h>
+#include<math.h>
 void lapChucNang(int chonChucNang)
 
 
@@ -30,22 +31,10 @@ void lapChucNang(int chonChucNang)
 void kiemTraSoNguyen(){}
 void uocChungVaBoiChung(){}
 void tinhTien(){}
+
+       
 int main()
 {
-    int chonChucNang;
-    do
-    {
-        printf("Moi chon chuc nang: \n");
-        printf("Menu\n");
-        printf("1.Kiem Tra So Nguyen\n");
-        printf("2.Uoc chung va Boi chung\n");
-        printf("3.Tinh Tien\n");
-        printf("Moi chon chuc nang[1-3]\n");
-        scanf("%d", &chonChucNang);
-        if(chonChucNang!=0)
-        {
-            lapChucNang(chonChucNang);
-        }
-        
-    } while (chonChucNang != 0);
+    
 }
+

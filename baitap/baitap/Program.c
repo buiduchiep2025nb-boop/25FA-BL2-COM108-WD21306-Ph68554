@@ -1,8 +1,9 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
 
+// Hàm kiểm tra số nguyên tố
 int laSoNguyenTo(int n) {
     if (n < 2) return 0;
     for (int i = 2; i <= sqrt(n); i++) {
@@ -11,11 +12,13 @@ int laSoNguyenTo(int n) {
     return 1;
 }
 
+// Hàm kiểm tra số chính phương
 int laSoChinhPhuong(int n) {
     int sq = (int)sqrt(n);
     return sq * sq == n;
 }
 
+// Hàm tìm UCLN
 int UCLN(int a, int b) {
     while (b != 0) {
         int r = a % b;
@@ -25,12 +28,12 @@ int UCLN(int a, int b) {
     return a;
 }
 
-
+// Hàm tìm BCNN
 int BCNN(int a, int b) {
     return (a * b) / UCLN(a, b);
 }
 
-
+// Hàm tính tiền karaoke
 void tinhTienKaraoke() {
     int gioBD, gioKT;
     printf("Nhap gio bat dau: "); scanf("%d", &gioBD);
@@ -47,6 +50,7 @@ void tinhTienKaraoke() {
     printf("Tien thanh toan: %.0lf VND\n", tien);
 }
 
+// Hàm tính tiền điện
 void tinhTienDien() {
     int kwh;
     printf("Nhap so kWh su dung: "); scanf("%d", &kwh);
@@ -60,6 +64,7 @@ void tinhTienDien() {
     printf("Tien dien phai tra: %.0lf VND\n", tien);
 }
 
+// Hàm đổi tiền
 void doiTien() {
     int tien;
     printf("Nhap so tien can doi: "); scanf("%d", &tien);
@@ -198,7 +203,7 @@ int main() {
         case 3: tinhTienKaraoke(); break;
         case 4: tinhTienDien(); break;
         case 5: doiTien(); break;
-        case 6: tinhLaiSuat(); break;
+        case 6: tinhLaiSuat(); break; 
         case 7: vayMuaXe(); break;
         case 8: sapXepSinhVien(); break;
         case 9: gameFPolyLott(); break;
