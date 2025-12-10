@@ -1,31 +1,75 @@
-// CConsoleApplication.c : file nay chua 'main' function. 
-// Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
-
 #include <stdio.h>
 
-int main()
-{
-    printf("Hi there!\n");
+void thongTinMonHoc() {
+    char tenMon[50];
+    int maMon;
+    int soTinChi;
+    int hocPhi;
+
+
+    printf("Nhap ten mon hoc: ");
+    scanf(" %s", tenMon);   // nhap ca dong
+
+    printf("Nhap ma mon: ");
+    scanf("%d", &maMon);
+
+    printf("Nhap so tin chi: ");
+    scanf("%d", &soTinChi);
+    hocPhi = soTinChi * 500000;
+    // in ra
+    printf("\n--- THONG TIN MON HOC ---\n");
+    printf("Ten mon hoc: %s\n", tenMon);
+    printf("Ma mon: %d\n", maMon);
+    printf("So tin chi: %d\n", soTinChi);
+    printf("Hoc phi cua mon la : %d", hocPhi);
 }
 
-// Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
 
-// Danh cho nguoi moi bat dau:
-//   1. Mo "View" > "Solution Explorer"
-//          de them/quan ly cac files
-//   2. Mo "View" > "Output"
-//          de kiem tra "build output" va "cac thong bao khac"
-//   3. Mo "View" > "Error List"
-//          de xem loi
-//   4. Chon Project > "Add" > "New Item"
-//          de tao moi file code,
-//      hoac Project > "Add" > "Existing Item"
-//          de them file da ton tai vao project nay.
-//   5. Sau nay, de mo lai project nay,
-//          chon "File > Open > Project" va chon file *.sln
-//      Co the xem thu muc project, noi luu file *.sln bang cach
-//          trong cua so "Solution Explorer"
-//          bam chuot phai vao "Solution"
-//          chon "Open Folder in File Explorer"
+void tinhTongSoLe() {
+    int n, i, x, tong = 0;
 
-// GV: AnhTT184
+    printf("Nhap so luong so nguyen: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Nhap so thu %d: ", i + 1);
+        scanf("%d", &x);
+        if (x % 2 != 0) {
+            tong += x;
+        }
+    }
+
+    printf("Tong cac so le = %d\n", tong);
+}
+
+int main() {
+    int chon;
+
+    do {
+        printf("\n------ MENU ------\n");
+        printf("1. Thong tin mon hoc\n");
+        printf("2. Tinh tong so le\n");
+        printf("3. Thong tin diem lab (chua lam)\n");
+        printf("0. Thoat\n");
+        printf("Moi chon chuc nang [0-3]: ");
+
+        scanf("%d", &chon);
+        getchar(); // clear bo nho dem
+
+        switch (chon) {
+        case 1:
+            thongTinMonHoc();
+            break;
+        case 2:
+            tinhTongSoLe();
+            break;
+        case 0:
+            printf("Thoat chuong trinh!\n");
+            break;
+        default:
+            printf("Lua chon khong hop le!\n");
+        }
+
+    } while (chon != 0);
+
+    return 0;
